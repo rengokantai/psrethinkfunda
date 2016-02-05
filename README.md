@@ -38,3 +38,18 @@ r.db("dbname").table("tablename").hasFields("x").concatMap(function(x){
   })
 })
 ```
+withFields = hasFields+ return  
+
+logic, date,time
+```
+r.db("dbname").table("tablename").filter(function(x){
+return x("y").gt(...).and(x("y")).lt(...)
+}).pluck("y")
+```
+date->string, use ISO8601(date) function  
+
+build time:
+```
+r.time(2015,r.january,12,'-10:00')
+```
+
