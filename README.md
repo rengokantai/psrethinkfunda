@@ -53,3 +53,18 @@ build time:
 r.time(2015,r.january,12,'-10:00')
 ```
 
+- cp3  
+import data  
+install python driver first
+```
+rethinkdb import -f data.json --table db.table
+```
+
+secondary indexes
+```
+r.db("dbname").table("tablaname").indexCreate("indexname",r.row("index1")("index2"));
+```
+Usingsecondary indexes:
+```
+r.db("dbname").table("tablaname").filter(function(x){return x("index1")("index2").eq(regexp)})
+```
